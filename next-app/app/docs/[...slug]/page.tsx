@@ -1,8 +1,11 @@
+type ParamsType = {
+    params: Promise<{slug: string[]}>
+}
+
+
 export default async function DocSlug({
     params,
-}: {
-    params: Promise<{ slug: string[] }>;
-}) {
+}: ParamsType) {
     const { slug } = await params;
     
     if(slug?.length === 2) {
